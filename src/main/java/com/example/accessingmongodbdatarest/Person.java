@@ -1,7 +1,9 @@
 package com.example.accessingmongodbdatarest;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+@Document(collection = "People")
 public class Person {
 
 	@Id private String id;
