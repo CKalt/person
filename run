@@ -1,3 +1,8 @@
 #!/bin/sh
 DIR=$(dirname $0)
+cd $DIR
+if [ -e run.pid ]; then
+    echo "A file named $DIR/run.pid already exists. Please run ./stop or remove the file."
+    exit
+fi
 ./mvnw spring-boot:run

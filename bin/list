@@ -1,0 +1,12 @@
+#!/bin/sh
+DIR=$(dirname $0)
+. $DIR/defs
+
+if [ "$#" -ne 1 ]; then
+    echo "usage: $0 entity"
+    exit
+fi
+
+ENTITY=${1}
+echo curl -s -X GET ${restEndPoint}/${ENTITY}
+curl -s -X GET ${restEndPoint}/${ENTITY}

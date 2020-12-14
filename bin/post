@@ -1,0 +1,16 @@
+#!/bin/sh
+DIR=$(dirname $0)
+. $DIR/defs
+if [ "$#" -ne 1 ] && [ "$#" -ne 2 ]; then
+    echo "usage: $0 file_name [entity]"
+    echo "entity values: people (default)"
+    exit
+fi
+
+FILE_NAME=$1
+ENTITY=${2:-people}
+server_port=${server_port:-8080}
+
+echo "curl -s -i -X POST -H "Content-Type:application/json" ${restEndPoint}/${ENTITY} --data @${FILE_NAME}"
+curl -s -i -X POST -H "Content-Type:application/json" ${restEndPoint}/${ENTITY} \
+    --data @${FILE_NAME}

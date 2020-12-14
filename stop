@@ -1,0 +1,11 @@
+#!/bin/sh
+DIR=$(dirname $0)
+cd $DIR
+if [ -e run.pid ]; then
+    RUN_PID=$(cat run.pid)
+    kill $RUN_PID
+    echo "process $RUN_PID killed."
+    rm run.pid
+else
+    echo "file $DIR/run.pid does not exist. Are you sure there is a \"run\" running?"
+fi

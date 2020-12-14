@@ -1,0 +1,3 @@
+restDbHost=http://localhost
+restDbPort=8081
+restEndPoint="${restDbHost}:${restDbPort}"

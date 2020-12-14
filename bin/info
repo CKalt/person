@@ -1,0 +1,5 @@
+#!/bin/sh
+DIR=$(dirname $0)
+. $DIR/defs
+echo "curl -s ${restEndPoint}"
+curl -s ${restEndPoint}
